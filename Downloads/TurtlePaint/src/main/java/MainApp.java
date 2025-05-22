@@ -103,6 +103,8 @@ public class MainApp {
 
     public static void save() {
         System.out.println("SAVING....");
+        String fileName = prompt("File Name", "SavingFile.png");
+        world.saveAs(System.getProperty("user.dir") + "/" + fileName);
     }
 
 
