@@ -1,14 +1,47 @@
 import java.awt.*;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class MainApp {
+
+    public static String prompt(String message, String defaultValue) {
+        Scanner scanner = new Scanner(System.in);
+        String name = " ";
+        System.out.printf("%s (%s):", message, defaultValue);
+        name = scanner.nextLine();
+        if (name.trim().isEmpty()) {
+            name = defaultValue;
+        }
+        return name;
+    }
+
+    public static int promptInt(String message, Integer defaultValue) {
+        Integer i = null;
+        while (i == null) {
+            String text = prompt(message, defaultValue.toString());
+            try {
+                i = Integer.parseInt(text);
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+        }
+        return i;
+    }
+
     public static void main(String[] args) {
         // This starter code to get you familiar with how
         // the TurtleLogo application works
 
+
+        //prompt for size of the screen
+        int size = promptInt("Size", 400);
+
+
         // The world is your canvas
-        World world = new World(400, 400);
-        Turtle turtle = new Turtle(world, -100, -100);
+        World world = new World(size, size);
+        Turtle turtle = new Turtle(world, size*-0.5, size*-0.5);
+
+
 
 //       //Xshape
 //       Shape s1= new XShape(turtle, -200,0,"GREEN", 6,100,100);
@@ -34,7 +67,6 @@ public class MainApp {
         );
 
         list.forEach(Shape::draw);
-
 
 
     }
