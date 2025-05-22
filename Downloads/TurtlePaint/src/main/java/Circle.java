@@ -11,11 +11,7 @@ public class Circle extends Shape {
 
     @Override
     public void draw() {
-        turtle.penUp();
-        turtle.goTo(xPostion, yPostion);
-        turtle.setPenWidth(borderWidth);
-        turtle.penDown();
-        turtle.setColor(Color.GREEN);
+        super.draw();
 
         int sides = 12;
         int angle = 360 / sides;

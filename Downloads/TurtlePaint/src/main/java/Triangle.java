@@ -11,11 +11,7 @@ public class Triangle extends Shape{
 
     @Override
     public void draw(){
-        turtle.penUp();
-        turtle.goTo(xPostion,yPostion);
-        turtle.setPenWidth(borderWidth);
-        turtle.penDown();
-        turtle.setColor(Color.GREEN);
+        super.draw();
 
 
         turtle.turnRight(120);
