@@ -19,8 +19,12 @@ public class MainApp
 //        s2.draw();
 
         //Trangle
-        Shape s3=new Triangle(turtle, 0,0,"GREEN", 6,100);
-        s3.draw();
+//        Shape s3=new Triangle(turtle, 0,0,"GREEN", 6,100);
+//        s3.draw();
+
+        //Circle
+        Shape s4=new Circle(turtle, 0,0,"GREEN", 6,100);
+        s4.draw();
 
     }
 }
